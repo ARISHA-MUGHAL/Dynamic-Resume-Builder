@@ -17,55 +17,92 @@
             </div>
             <div class="header-right">
                 <img id="displayPicture" class="profile-picture" src="placeholder.jpg" alt="Profile Picture">
-                <input type="file" id="profilePictureInput" onchange="uploadProfilePicture()" accept="image/*" />
+                <input type="file" id="profilePictureInput" onchange="uploadProfilePicture()" accept="image/*" style="display: none;" />
+                <label for="profilePictureInput" class="choose-file-label">Choose File</label>
             </div>
         </header>
+
         <!-- Main Content -->
         <div class="content">
-            <!-- Left Column: Education, Expertise, Hobbies, Languages -->
             <div class="left-column">
                 <h2>Education</h2>
-                <p>Bachelor's in Food Technology, ABC University</p>
+                <p id="resume-education">Bachelor's in Food Technology, ABC University</p>
                 
                 <h2>Expertise</h2>
                 <div id="expertiseSection">
-                    <p>Food Safety, Quality Assurance, Product Development</p>
+                    <p id="resume-expertise">Food Safety, Quality Assurance, Product Development</p>
                 </div>
                 
                 <h2>Hobbies & Languages</h2>
-                <p>Cooking, Reading, English, Urdu</p>
+                <p id="resume-hobbies-languages">Cooking, Reading, English, Urdu</p>
             </div>
 
-            <!-- Right Column: About, Work Experience, Projects, Contact Information -->
             <div class="right-column">
                 <h2>About</h2>
-                <p>Detail-oriented Food Technologist with extensive experience in quality control and product development...</p>
+                <p id="resume-about">Detail-oriented Food Technologist with extensive experience in quality control and product development...</p>
                 
                 <h2>Work Experience</h2>
-                <p>Senior Food Technologist at XYZ Foods (2018-Present)</p>
-                <p>Food Quality Specialist at ABC Corp (2015-2018)</p>
+                <p id="resume-work-experience">Senior Food Technologist at XYZ Foods (2018-Present)</p>
+                <p id="resume-work-experience">Food Quality Specialist at ABC Corp (2015-2018)</p>
 
                 <h2>Projects</h2>
-                <p>Developed a new line of organic snacks, Implemented a new quality control system...</p>
+                <p id="resume-projects">Developed a new line of organic snacks, Implemented a new quality control system...</p>
                 
                 <h2>Skills</h2>
                 <div id="skillsSection">
-                    <p>Food Safety Standards, Sensory Evaluation, HACCP</p>
+                    <p id="resume-skills">Food Safety Standards, Sensory Evaluation, HACCP</p>
                 </div>
 
                 <h2>Contact Information</h2>
-                <p><strong>Email:</strong> aqib.sheikh@example.com</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p id="resume-email">Email: aqib.sheikh@example.com</p>
+                <p id="resume-phone">Phone: +123 456 7890</p>
             </div>
         </div>
         
+        <!-- Form Section -->
+        <div id="form-section">
+            <form>
+                <label for="nameInput">Name:</label>
+                <input type="text" id="nameInput" placeholder="Enter your name" oninput="updateResume()">
+
+                <label for="titleInput">Job Title:</label>
+                <input type="text" id="titleInput" placeholder="Enter your job title" oninput="updateResume()">
+
+                <label for="aboutInput">About:</label>
+                <textarea id="aboutInput" placeholder="Enter your about section" oninput="updateResume()"></textarea>
+
+                <label for="workExperienceInput">Work Experience:</label>
+                <textarea id="workExperienceInput" placeholder="Enter your work experience" oninput="updateResume()"></textarea>
+
+                <label for="projectsInput">Projects:</label>
+                <textarea id="projectsInput" placeholder="Enter your projects" oninput="updateResume()"></textarea>
+
+                <label for="skillsInput">Skills:</label>
+                <textarea id="skillsInput" placeholder="Enter your skills" oninput="updateResume()"></textarea>
+
+                <label for="educationInput">Education:</label>
+                <textarea id="educationInput" placeholder="Enter your education" oninput="updateResume()"></textarea>
+
+                <label for="hobbiesLanguagesInput">Hobbies & Languages:</label>
+                <textarea id="hobbiesLanguagesInput" placeholder="Enter your hobbies and languages" oninput="updateResume()"></textarea>
+
+                <label for="expertiseInput">Expertise:</label>
+                <textarea id="expertiseInput" placeholder="Enter your expertise" oninput="updateResume()"></textarea>
+
+                <label for="emailInput">Email:</label>
+                <input type="email" id="emailInput" placeholder="Enter your email" oninput="updateResume()">
+
+                <label for="contactNumberInput">Contact Number:</label>
+                <input type="tel" id="contactNumberInput" placeholder="Enter your contact number" oninput="updateResume()">
+            </form>
+        </div>
+
         <!-- Controls -->
         <div class="controls">
             <button onclick="toggleVisibility('skillsSection')">Toggle Skills</button>
             <button onclick="toggleVisibility('expertiseSection')">Toggle Expertise</button>
         </div>
     </div>
-
     <script src="main.js"></script>
 </body>
 </html>
